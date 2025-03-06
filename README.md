@@ -2,7 +2,7 @@
 
 A beautiful, responsive Tic Tac Toe game built with React, TypeScript, and Tailwind CSS. Features both Player vs Player and Player vs AI modes with an unbeatable AI opponent using the Minimax algorithm.
 
-![Tic Tac Toe Preview](https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&q=80&w=1000)
+![Tic Tac Toe Preview](project-demo/project-demo-img.png)
 
 ## Features
 
