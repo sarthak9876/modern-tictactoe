@@ -138,7 +138,6 @@ const minimax = (squares: Board, depth: number, isMaximizing: boolean): number =
 
   return bestScore;
 };
-
 ```
 
 This implementation makes the AI unbeatable - the best a player can achieve against it is a draw.
