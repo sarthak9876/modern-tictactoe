@@ -25,8 +25,11 @@ COPY --from=build /app/dist /usr/share/nginx/html
 # Copy nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Expose port 80
-EXPOSE 80
+# Default port (can be overridden)
+ENV PORT=80
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Replace default port in nginx config
+CMD sh -c "sed -i 's/listen 80/listen '$PORT'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+
+# Expose the port
+EXPOSE $PORT
