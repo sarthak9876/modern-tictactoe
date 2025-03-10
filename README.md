@@ -16,6 +16,29 @@ A beautiful, responsive Tic Tac Toe game built with React, TypeScript, and Tailw
 - 🎯 TypeScript for type safety
 - 📱 Fully responsive for all devices
 
+## Project Structure
+
+```
+tic-tac-toe/
+├── src/                    # Source code
+│   ├── App.tsx            # Main application component
+│   ├── main.tsx           # Application entry point
+│   ├── index.css          # Global styles
+│   └── vite-env.d.ts      # TypeScript declarations
+├── public/                 # Static assets
+├── nginx.conf             # Nginx configuration
+├── Dockerfile             # Docker configuration
+├── .dockerignore          # Docker ignore file
+├── .gitignore             # Git ignore file
+├── index.html             # HTML entry point
+├── package.json           # Project dependencies
+├── postcss.config.js      # PostCSS configuration
+├── tailwind.config.js     # Tailwind CSS configuration
+├── tsconfig.json          # TypeScript configuration
+├── tsconfig.node.json     # Node-specific TS config
+└── vite.config.ts         # Vite configuration
+```
+
 ## Tech Stack
 
 - React 18
@@ -60,6 +83,32 @@ npm run build
 ```
 
 The built files will be in the `dist` directory.
+
+### Docker Deployment
+
+1. Build the Docker image:
+   ```bash
+   docker build -t tic-tac-toe .
+   ```
+
+2. Run the container:
+   ```bash
+   docker run -p 80:80 tic-tac-toe
+   ```
+
+#### Custom Port Configuration
+
+If port 80 is already in use, you can specify a different port:
+
+1. Using a different port when running the container:
+   ```bash
+   docker run -e PORT=8080 -p 8080:8080 tic-tac-toe
+   ```
+
+2. Or map the container's port 80 to a different host port:
+   ```bash
+   docker run -p 8080:80 tic-tac-toe
+   ```
 
 ## How to Play
 
